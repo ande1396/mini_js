@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Typing | Kyleande</title>
+    </head>
+
+         <style type="text/css">
+
+            body {
+                    background-color:black;
+                    font-family: monospace;
+                    color:white;
+                    font-size:50px;
+                    text-align: center;
+                    margin-top:20%;
+            }
+
+            #typing {
+                    color: #777;
+                    border-right: 1px solid #777;
+                    padding-right: 7px;
+                    display: inline;
+                }
+
+        </style>
+
+    <body>
+        <div id="typing"></div>
+
+        <script type="text/javascript">
+
+        (function() {
+
+            var words = ["Hello!", "Thanks for visiting my site", "Check out all of my projects", "Send me an email at kyle@kyleande.com if you have any questions", 'Also, click the "Slam Jam" button at the bottom of the main page', "Thank You!"],
+                el = document.getElementById('typing'),
+                word_counter = 0,
+                character_counter = 0;
+
+
+            setInterval(update, 150);
+
+
+
+            function update() 
+            {
+                el.innerHTML = el.innerHTML + words[word_counter][character_counter++] // character_counter = character_counter + 1;
+
+                //if el.innerHTML == ".com", puase
+
+                if(character_counter == words[word_counter].length + 1)
+                {
+                    //make it blank
+                    el.innerHTML = '';
+                    character_counter = 0;
+                    words[word_counter++];//start with the next line of words
+                 
+                }
+
+                                        // if reaches end of words, start over
+                     if(word_counter == words.length)
+                     {
+                        //start over
+                        word_counter = 0;
+                     }
+            }
+
+        }());
+
+
+        </script>
+
+
+    </body>
+</html>
